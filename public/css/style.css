@@ -1,0 +1,51 @@
+:root {
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 300;
+  color: var(--light);
+}
+
+.text-light {
+  color: var(--light) !important;
+}
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+.bg-dark-x {
+  background-color: var(--dark-x);
+}
+
+.btn {
+  min-height: 3.125rem;
+  font-weight: 600;
+
+  background: #ea6c24;
+}
+.btn-primary:hover {
+  background: #5b5b5b;
+}
+.form-control {
+  min-height: 3.125rem;
+  line-height: initial;
+}
+.form-control:focus {
+  background-color: var(--dark-x);
+  outline: none;
+}
+
+.img-1 {
+  background-image: url("../img/img1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.img-2 {
+  background-image: url("../img/img2.jpg");
+  background-size: cover;
+  background-position: center;
+}
