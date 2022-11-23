@@ -1,9 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use Mail;
+use App\Mail\DemoMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -30,13 +31,18 @@ class UsuarioController extends Controller
                 'name' => 'required',
                 'email' => 'required|max:50| email',
                 'id_Role_FK' => 'required',
-                'password' => 'required|max:60'
+                'password' => ''
             ]
         );
         $password=Str::random(20);
         $datos["password"]=$password;
+        var_dump($datos);
+       
+
         $usuario = User::create($datos);
+        Mail::to('gymcore@gym.com')->send(new DemoMail( $datos));
         return view('auth.usuario.creado');
+        
     }
 
     public function show(User $usuario)
